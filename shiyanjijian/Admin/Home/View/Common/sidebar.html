@@ -1,0 +1,40 @@
+<!-- <div id="sidebar">
+	<ul style="border:0;margin: 0">
+		<li style="border:none">
+			<a href="{:U('Index/index','','')}" class="bg_blue">
+				<i class="icon icon-user c_white"></i>
+				<span class="c_white">账户管理</span>
+			</a>
+		</li>
+		<li style="border:none">
+			<a href="{:U('Report/reportList?scale=2')}" class="bg_blue">
+				<i class="icon icon-user c_white"></i>
+				<span class="c_white">举报管理</span>
+			</a>
+		</li>
+	</ul>
+</div> -->
+<div id="sidebar">
+	<ul>
+		<li>
+			<a href="{:U('Index/index','','')}">
+				<i class="icon icon-user"></i>
+				<span class="c_white">账户管理</span>
+			</a>
+		</li>
+		<li>
+			<a href="{:U('Report/reportList?scale=1')}">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">举报管理</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	!function(){
+		var sdb_sort={'index':0,'report':1};
+		var num=sdb_sort[document.getElementById('sidebar_active').innerHTML];
+		document.getElementById('sidebar').getElementsByTagName('li')[num].className="active";
+		// document.getElementById('sidebar').getElementsByTagName('a')[num].className="bg_blue2";
+	}();
+</script>

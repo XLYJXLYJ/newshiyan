@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<include file="Common/head" />
+</head>
+<body>
+	<div class="container bgwt bgbt pdb100" id="container">
+		<include file="Common/header" />
+		<div class="cl"></div>
+		<div class="pd10">
+			<p class="f16 fwb tc" id="prompt_title">{$data['title']}</p>
+			<div onclick="history.go(-1)" class="btn_orange tc" style="box-shadow: none;margin-bottom: 10px">返回</div>
+			<div class="bg_f6f3e0 pd10 bd_1_ccc mgb10">
+				<pre style="display: block;white-space: pre-wrap;">{$data['contain']}</pre>
+			</div>
+			<div onclick="history.go(-1)" class="btn_orange tc" style="box-shadow: none;">返回</div>
+		</div>
+	</div>
+	<include file="Common/js" />
+</body>
+</html>

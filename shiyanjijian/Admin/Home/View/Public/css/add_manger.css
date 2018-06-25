@@ -1,0 +1,43 @@
+#ad_info{
+	width: 480px;
+	height: 340px;
+	background-color: #EEEEEE;
+    border-radius: 8px;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    z-index: 1000;
+    display: none;
+}
+
+#ad_info_content{
+	width: 458px;
+	height: 330px;
+	margin: auto;
+	background-color: #F9F9F9; 
+}
+#ad_info_content form{
+	margin-left: 10px;
+	padding-top: 10px;
+}
+#ad_info_content{
+	line-height: 30px;
+}
+#ad_info_content p{
+	margin-top: 15px;
+	padding-top: 5px;
+}
+#ad_info_confirm{
+	margin-left: 240px;
+}
+#ad_grey{
+	width: 1366px;
+	height: 633px;
+	z-index: 100;
+	background-color: black;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.5;
+	display: none;
+}

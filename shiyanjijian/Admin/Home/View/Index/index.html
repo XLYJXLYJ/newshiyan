@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+</head>
+<body>
+
+    <include file="Common/header" />
+
+    <span id="sidebar_active" style="display: none;">index</span>
+    <include file="Common/sidebar"/>
+
+    <div id="content">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"> <i class="icon-align-justify"></i>
+                            </span>
+                            <h5>基本信息</h5>
+                            <!--<div style="float:right;margin-right:50px">
+                            <li class="btn btn-inverse">
+                                <a title="" href="{:U('Login/resetAccount','','')}"> <i class="icon icon-share-alt"></i>
+                                    <span class="text">恢复默认设置</span>
+                                </a>
+                            </li>
+                        </div>
+                        -->
+                        <div style="float:right;margin-right:50px">
+                            <a href="{:U('Index/resetAccount','','')}">
+                                <span class="label">恢复默认设置</span>
+                            </a>
+                            <a href="#set_password{$user.id}" data-toggle="modal">
+                                <span class="label">修改密码</span>
+                            </a>
+                        </div>
+
+                        <!-- 修改密码弹出框 -->
+                        <div id="set_password{$user.id}" class="modal hide">
+                            <div class="modal-header">
+                                <button data-dismiss="modal" class="close" type="button">×</button>
+                                <h3>密码设置</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="control-group">
+                                    <form class="form-horizontal" method="post" action="{:U('Index/resetPW1','','')}" name="reset_pw">
+
+                                        <div class="control-group">
+                                            <label class="control-label">新密码</label>
+                                            <div class="controls">
+                                                <input type="password" name="password"  />
+                                                <input type="hidden" name="id"  value="{$user.id}"/>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">新密码确认</label>
+                                            <div class="controls">
+                                                <input type="password" name="confirm_password"   />
+                                            </div>
+                                        </div>
+                                        <div style="width:545px;text-align:center;padding-top:10px">
+                                            <input type="submit" value="确定" class="btn btn-primary" />
+                                            <button class="btn" data-dismiss="modal" class="close">取消</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <span class="label label-important">48 notices</span>
+                    -->
+                </div>
+                <div class="widget-content nopadding">
+                    <form class="form-horizontal" method="post" action="{:U('Index/modifyAccount','','')}"  name="info" >
+                        <div class="control-group">
+                            <label class="control-label">用户名</label>
+                            <div class="controls">
+                                <input type="text" name="username"  value="{$user.username}" />
+                            </div>
+                            <input type="hidden" name="id"  value="{$user.id}" />
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">邮箱</label>
+                            <div class="controls">
+                                <input type="text" name="email"  value="{$user.email}" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">上次修改时间</label>
+                            <div class="controls">
+                                <label>{$user.update_time}</label>
+                            </div>
+                        </div>
+                        <!--</div>
+                        <div class="control-group">
+                            <label class="control-label">
+                                <a href="#set_password{$user.id}" data-toggle="modal" class="btn">
+                                    <i class="icon-wrench"></i>
+                                    修改密码
+                                </a>
+                            </label>
+                        </div>
+                        -->
+                        <div class="form-actions">
+                            <input type="submit" value="提交" class="btn btn-primary" />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.uniform.js"></script>
+<script src="__PUBLIC__/js/select2.min.js"></script>
+<script src="__PUBLIC__/js/jquery.validate.js"></script>
+<script src="__PUBLIC__/js/jquery.wizard.js"></script>
+<script src="__PUBLIC__/js/unicorn.js"></script>
+<script src="__PUBLIC__/js/unicorn.wizard.js"></script>
+<script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
+
+</body>
+</html>

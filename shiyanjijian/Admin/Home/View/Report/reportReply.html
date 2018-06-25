@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+</head>
+<body>
+
+    <include file="Common/header" />
+
+    <span id="sidebar_active" style="display: none;">report</span>
+    <include file="Common/sidebar"/>
+
+    <div id="content">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"> <i class="icon-align-justify"></i>
+                            </span>
+                            <h5>举报回复</h5>
+                            <div style="float:right;margin-right:50px">
+                                <a onclick="history.go(-1)" class="label" id="return" >返回</a>
+                            </div>
+                        </div>
+                        <div class="widget-content nopadding">
+                            <form id="replyForm" method="post"  class="form-horizontal">
+                                <p id="reply" style="line-height: 40px;font-size: 24px;text-align: center;margin-top: 20px">回复</p>
+                                <div class="control-group">
+                                    <input type="text" id="id" name="id" value="{$data['id']}" style="display: none;">
+                                    <textarea id="replyContain" name="reply" style="display: block;margin-right: auto;margin-left: auto;resize: none;margin-bottom: 20px" cols="30" rows="10">{$data['result']}</textarea>
+                                </div>
+                                <div style="text-align: center;margin-bottom: 20px">
+                                    <a onclick="history.go(-1)" class="btn btn-info">返回</a>
+                                    <div id="sendBtn" class="btn btn-success">回复</div>
+                                </div>
+                                <script>
+                                    !function(){
+                                        function updReply(){
+                                            if(document.getElementById('replyContain').value==""){alert("回复不能为空。");return false;}
+                                            var id=document.getElementById('id').value;
+                                            var reply=document.getElementById('replyContain').value;
+                                            $.post(
+                                                "{:U('Report/updateReply')}",
+                                                {
+                                                    'id':id,
+                                                    'reply':reply
+                                                },
+                                                function(data){
+                                                if(data==1){
+                                                    window.location.href="{:U('Report/reportList',array('scale'=>3))}";
+                                                }else{
+                                                    alert("回复失败");
+                                                    return false;
+                                                }
+                                            })
+                                        }
+                                        document.getElementById('sendBtn').onclick=updReply;
+                                    }()
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.uniform.js"></script>
+    <script src="__PUBLIC__/js/select2.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.validate.js"></script>
+    <script src="__PUBLIC__/js/jquery.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.js"></script>
+    <script src="__PUBLIC__/js/unicorn.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
+
+</body>
+</html>

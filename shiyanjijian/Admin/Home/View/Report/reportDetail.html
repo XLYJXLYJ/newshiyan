@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+</head>
+<body>
+
+    <include file="Common/header" />
+
+    <span id="sidebar_active" style="display: none;">report</span>
+    <include file="Common/sidebar"/>
+
+    <div id="content">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"> <i class="icon-align-justify"></i>
+                            </span>
+                            <h5>举报详情</h5>
+                            <div style="float:right;margin-right:50px">
+                                <a href="{:U('Report/reportList',array('scale'=>$data['scale']))}" class="label" id="return" >返回</a>
+                            </div>
+                        </div>
+                        <div class="widget-content nopadding">
+                            <form action="" method="post" class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label">查询码：</label>
+                                    <div class="controls" style="line-height:30px ">{$data[0]['qrcd']}</div>
+                                </div>
+                                <p style="line-height: 40px;font-size: 24px;text-align: center;margin-top: 20px">举报人信息</p>
+                                <div class="control-group">
+                                    <label class="control-label">姓名：</label>
+                                    <div class="controls" style="line-height:30px ">
+                                        <if condition="$data[0]['a_name']">
+                                            {$data[0]['a_name']}
+                                            <else />
+                                            匿名
+                                        </if>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">身份证号：</label>
+                                    <div class="controls" style="line-height:30px ">{$data[0]['a_IDcard']}</div>
+                                </div>
+                                <!-- <div class="control-group">
+                                <label class="control-label">职务或身份：</label>
+                                <div class="controls" style="line-height:30px ">{$data['a_work']}</div>
+                            </div>
+                            -->
+                            <div class="control-group">
+                                <label class="control-label">联系方式：</label>
+                                <div class="controls" style="line-height:30px ">{$data[0]['a_link']}</div>
+                            </div>
+                            <!-- <div class="control-group">
+                            <label class="control-label">居住地址：</label>
+                            <div class="controls" style="line-height:30px ">{$data['a_address']}</div>
+                        </div>
+                        -->
+                        <div class="control-group">
+                            <label class="control-label">工作单位：</label>
+                            <div class="controls" style="line-height:30px ">{$data[0]['a_company']}</div>
+                        </div>
+                        <!-- <div class="control-group">
+                        <label class="control-label">政治面貌：</label>
+                        <div class="controls" style="line-height:30px ">{$data['a_political']}</div>
+                    </div>
+                    -->
+                    <!-- <div class="control-group">
+                    <label class="control-label">电子邮箱：</label>
+                    <div class="controls" style="line-height:30px ">{$data['a_email']}</div>
+                </div>
+                -->
+                <p style="line-height: 40px;font-size: 24px;text-align: center;margin-top: 20px">被举报人信息</p>
+                <div class="control-group">
+                    <label class="control-label">姓名：</label>
+                    <div class="controls" style="line-height:30px ">{$data[0]['b_name']}</div>
+                </div>
+                <!-- <div class="control-group">
+                <label class="control-label">级别：</label>
+                <div class="controls" style="line-height:30px ">{$data['b_level']}</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">特殊身份：</label>
+                <div class="controls" style="line-height:30px ">{$data['b_special']}</div>
+            </div>
+            -->
+            <div class="control-group">
+                <label class="control-label">工作单位：</label>
+                <div class="controls" style="line-height:30px ">{$data[0]['b_campany']}</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">职务：</label>
+                <div class="controls" style="line-height:30px ">{$data[0]['b_work']}</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">政治面貌：</label>
+                <div class="controls" style="line-height:30px ">{$data[0]['b_political']}</div>
+            </div>
+            <!-- <div class="control-group">
+            <label class="control-label">居住地址：</label>
+            <div class="controls" style="line-height:30px ">{$data['b_address']}</div>
+        </div>
+        -->
+        <p style="line-height: 40px;font-size: 24px;text-align: center;margin-top: 20px">举报正文</p>
+        <div class="control-group">
+            <label class="control-label">标题：</label>
+            <div class="controls" style="line-height:30px ">{$data[0]['title']}</div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">问题类别：</label>
+            <div class="controls" style="line-height:30px ">{$data[0]['scale']}</div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">主要问题：</label>
+            <div class="controls" style="line-height:30px ">{$data[0]['contain']}</div>
+        </div>
+        <div class="control-group" style="margin-bottom: 20px">
+            <label class="control-label">附件：</label>
+            <div class="controls" style="line-height:30px ">
+                <if condition="$data[0]['file']">
+                    <a href="{$data[0]['file']}" class="btn btn-info dlBtn">打包下载</a>
+                    <script>
+                        !function(){
+                            document.getElementById('downBtn').onclick=function(){
+                                var url=document.getElementById('file').innerHTML;
+                                var url2=url.split('.');
+                                var len=url2.length;
+                                var type=url2[len-1];
+                                window.location.href="__ROOT__/Public/download.php?url="+url+"&type="+type;
+                            }
+                        }()
+                    </script>
+                    <else />
+                    没有附件
+                </if>
+
+            </div>
+        </div>
+        <div style="text-align: center;margin-bottom: 20px">
+            <if condition="$data[0]['ifAgree'] eq 2">
+                <p>不受理原因：{$data[0]['noAgreeMsg']}</p>
+            </if>
+            <a href="{:U('Report/reportList',array('scale'=>$data['scale']))}" class="btn btn-info">返回</a>
+            <if condition="$data[0]['ifAgree'] eq 1">
+                <!-- 未回复 -->
+                <if condition="$data[0]['ifReply'] eq 0">
+                    <a class="btn btn-danger" id="noAgree">不受理</a>
+                    <a href="{:U('Report/reportReply',array('id'=>$data[0]['id']))}" class="btn btn-success">回复</a>
+                    <else />
+                    <!-- 已回复 -->
+                    <a href="{:U('Report/reportReply',array('id'=>$data[0]['id']))}" class="btn btn-success">已回复</a>
+                </if>
+                <!-- 未受理 -->
+                <elseif condition="$data[0]['ifAgree'] eq 0" />
+                    <a href="{:U('Report/agree',array('id'=>$data[0]['id']))}" class="btn btn-success">受理</a> 
+                    <a class="btn btn-danger" id="noAgree">不受理</a>
+                <else />
+                <!-- 不受理 -->
+                <a href="{:U('Report/agree',array('id'=>$data[0]['id']))}" class="btn btn-success">受理</a> 
+            </if>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
+<div class="blk_demo" id="blk_demo"></div>
+<div class="alert_demo tc" id="alert_demo">
+    <textarea style="resize: none;height: 100px" id="noAgreeMsg">非业务受理范围</textarea>
+    <div id="reportId" style="display: none;">{$data[0]['id']}</div>
+    <div class="btn btn-info" id="rtBtn">返回</div>
+    <div class="btn btn-success" id="noAgreeSend">提交</div>
+</div>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.uniform.js"></script>
+<script src="__PUBLIC__/js/select2.min.js"></script>
+<script src="__PUBLIC__/js/jquery.validate.js"></script>
+<script src="__PUBLIC__/js/jquery.wizard.js"></script>
+<script src="__PUBLIC__/js/unicorn.js"></script>
+<script src="__PUBLIC__/js/unicorn.wizard.js"></script>
+<script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
+<script type="text/javascript">
+    !function(){
+        document.getElementById('noAgree').onclick=function(){
+            $('#blk_demo').css('display','block');
+            $('#alert_demo').css('display','block');
+        }
+        document.getElementById('blk_demo').onclick=function(){
+            $('#blk_demo').css('display','none');
+            $('#alert_demo').css('display','none');
+        }
+        document.getElementById('rtBtn').onclick=function(){
+            $('#blk_demo').css('display','none');
+            $('#alert_demo').css('display','none');
+        }
+        document.getElementById('noAgreeSend').onclick=function(){
+            var id=$('#reportId').html();
+            var msg=$('#noAgreeMsg').val();
+            if(!msg){
+                alert('内容不能为空');
+                return;
+            }
+            $.post("{:U('Report/noAgree')}",
+                {'id':id,
+                'msg':msg},
+                function(data){
+                    if(data==1){
+                        window.location.href="{:U('Report/reportDetail',array('id'=>$data[0][id],'scale'=>5))}";
+                    }else{
+                         alert('操作失败');
+                    }
+                });
+        }
+    }()
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<include file="Common/head" />
+</head>
+<body>
+	<div class="container bgwt bgbt pdb100" id="container">
+		<include file="Common/header" />
+		<div class="cl"></div>
+		<div class="pd10">
+			<p class="f16 fwb" id="prompt_title">相关法律法规</p>
+			<div class="mgb10 df">
+				<if condition="$scale eq 1">
+					<a href="{:U('Help/lawsList')}" class="btn_orange tc flx mgr5" style="box-shadow: none;padding: 2px 5px;border-radius: 5">中央文件</a>
+					<else />
+					<a href="{:U('Help/lawsList')}" class="btn_white tc flx mgr5" style="box-shadow: none;padding: 2px 5px;border-radius: 5">中央文件</a>
+				</if>
+				<if condition="$scale eq 2">
+					<a href="{:U('Help/lawsList',array('scale'=>2))}" class="btn_orange bdr tc flx mgr5" style="box-shadow: none;padding: 2px 5px;border-radius: 5">广东省文件</a>
+					<else />
+					<a href="{:U('Help/lawsList',array('scale'=>2))}" class="btn_white tc flx mgr5" style="box-shadow: none;padding: 2px 5px;border-radius: 5">广东省文件</a>
+				</if>
+				<if condition="$scale eq 3">
+					<a href="{:U('Help/lawsList',array('scale'=>3))}" class="btn_orange tc flx" style="box-shadow: none;padding: 2px 5px;border-radius: 5">深圳市文件</a>
+					<else />
+					<a href="{:U('Help/lawsList',array('scale'=>3))}" class="btn_white tc flx" style="box-shadow: none;padding: 2px 5px;border-radius: 5">深圳市文件</a>
+				</if>
+			</div>
+			<div class="bg_f6f3e0 pd10 bd_1_ccc">
+				<volist name="list" id="vo">
+					<a href="{:U('Help/lawsDetail',array('id'=>
+						$vo['id']))}" class="df mgb5">
+						<span class="flx">{$vo['title']}</span>
+					</a>
+				</volist>
+			</div>
+		</div>
+	</div>
+	<include file="Common/js" />
+</body>
+</html>
