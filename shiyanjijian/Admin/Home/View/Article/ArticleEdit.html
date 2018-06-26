@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+</head>
+<body>
+
+    <include file="Common/header" />
+
+    <span id="sidebar_active" style="display: none;">index</span>
+    <include file="Common/sidebar"/>
+
+    <div id="content">
+        <form class="form-horizontal" role="form" action="{:U('Article/ArticleUnscramble')}" method="post" enctype="multipart/form-data">
+            <div class="form-group mgb20 pdt20">
+                <label for="name" class="col-sm-2">解读标题</label>
+                <div>
+                    <input class="form-control" id="username" placeholder="" name="title" required="" type="text">
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">解读纲要</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" id="username" placeholder="" name="outline" required="" type="text"></textarea> 
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">解读来源</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="username" placeholder="" name="title_from" required="" type="text">
+                </div>
+            </div>
+            <div class="form-group mgb20 ">
+                <label for="name" class="col-sm-2">第几条</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="username" placeholder="" name="order_by" required="" type="text">
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">解读内容</label>
+                <div class="col-sm-10">
+                    <textarea class="article" placeholder="" name="context_t" required=""></textarea> 
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">文章缩略图</label>
+                <div class="col-sm-6">
+                <input  placeholder="" class="form-control" name="pic"  type="file">
+                </div>
+            </div>           
+            <div class="form-group mgb20">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-default bg_blue01 c_white center">保存信息</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.uniform.js"></script>
+    <script src="__PUBLIC__/js/select2.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.validate.js"></script>
+    <script src="__PUBLIC__/js/jquery.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.js"></script>
+    <script src="__PUBLIC__/js/unicorn.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
+
+</body>
+<style>
+    #content{
+        padding-left: 10%;
+    }
+    .article{
+        min-height: 200px;
+    }
+    .center{
+        margin-left: 38%;
+    }
+    .center:hover{
+        margin-left: 38%;
+        background:#285FC1!important;
+        color: #fff;
+    }
+</style>
+</html>

@@ -14,45 +14,15 @@
         <div class="article">
             <h2 class="lib-title"><img src="/shiyanjijian/Public/images/ArticleUnscramble/edit.png" alt=""> 条文解读</h2>
             <div class="lib-context">
-                <ul>
+                <?php if(is_array($g_article)): foreach($g_article as $key=>$a_art): ?><ul>
                     <a href="./ArticleUnscrambleDetail.html">
                         <li>
                             <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                            <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
+                            <h3 class="context-title"><?php echo ($a_art["title"]); ?></h3>
                             <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
                         </li>
                     </a>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                </ul>
+                </ul><?php endforeach; endif; ?>
             </div>
             <div class="download-more">
                 <p>点击加载更多<img src="/shiyanjijian/Public/images/ArticleUnscramble/download.png" alt=""></p>

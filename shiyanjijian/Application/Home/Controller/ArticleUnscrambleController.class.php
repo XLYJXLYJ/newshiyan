@@ -3,23 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 
 class ArticleUnscrambleController extends Controller {
-	public function help() {
-		$this->display();
-	}
-	public function lawsList(){
-		$scale=I('get.scale');
-		if(!$scale)$scale=1;
-		$db=M('laws');
-		$list=$db->where('scale='.$scale)->field('id,title')->select();
-		$this->assign('scale',$scale);
-		$this->assign('list',$list);
-		$this->display();
-	}
-	public function lawsDetail(){
-		$id=I('get.id');
-		$db=M('laws');
-		$data=$db->where('id='.$id)->select();
-		$this->assign('data',$data[0]);
+	public function ArticleUnscramble() {
+		$article =  M('Article');
+		$this->assign('g_article',$article->select());
 		$this->display();
 	}
 }

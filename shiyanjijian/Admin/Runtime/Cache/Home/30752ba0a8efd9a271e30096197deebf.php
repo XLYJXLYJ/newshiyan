@@ -83,6 +83,36 @@
 				<span class="c_white">举报管理</span>
 			</a>
 		</li>
+		<li>
+			<a href="<?php echo U('Article/ArticleUnscramble');?>">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">条文解读</span>
+			</a>
+		</li>
+		<li>
+			<a href="<?php echo U('Study/StudyAnswer');?>">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">学习问答</span>
+			</a>
+		</li>
+		<li>
+			<a href="<?php echo U('Warning/WarningExposure');?>">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">警示曝光</span>
+			</a>
+		</li>
+		<li>
+			<a href="<?php echo U('Video/VideoEducation');?>">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">视频教育</span>
+			</a>
+		</li>
+		<li>
+			<a href="<?php echo U('Clean/CleanCulture');?>">
+				<i class="icon icon-list-alt"></i>
+				<span class="c_white">廉洁文化</span>
+			</a>
+		</li>
 	</ul>
 </div>
 <script type="text/javascript">

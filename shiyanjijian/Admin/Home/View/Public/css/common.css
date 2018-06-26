@@ -1,9 +1,10 @@
 *{
 	font-family: "微软雅黑";
 }
-#content{min-height: 480px}
+#content{min-height: 500px}
 .bg_blk05{background: rgba(0,0,0,0.5);}
 .bg_blue{background: #629aed}
+.bg_blue01{background: #006dcc}
 .bg_blue:hover{background:#285FC1!important}
 .bg_blue2{background: #285FC1!important}
 .bg_img_cv{background: center center;background-size: cover}

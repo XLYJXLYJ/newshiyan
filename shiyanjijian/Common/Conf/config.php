@@ -9,7 +9,7 @@ return array(
 	'DB_PORT' => '3306',
 	'DB_PREFIX' => 'oy_',*/
 	//本地配置
-	'DB_TYPE' => 'mysqli',
+	'DB_TYPE' => 'mysql',
 	'DB_HOST' => 'localhost',
 	'DB_NAME' => 'syjj_db',
 	'DB_USER' => 'root',
