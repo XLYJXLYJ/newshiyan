@@ -46,7 +46,7 @@
         </ul>
     </div> -->
 
-    <span id="sidebar_active" style="display: none;">index</span>
+    <span id="sidebar_active" style="display: none;">study</span>
     <!-- <div id="sidebar">
 	<ul style="border:0;margin: 0">
 		<li style="border:none">
@@ -111,8 +111,11 @@
 </div>
 <script type="text/javascript">
 	!function(){
-		var sdb_sort={'index':0,'report':1};
+		var sdb_sort={'index':0,'report':1,'article':2,'study':3,'warning':4,'video':5,'clean':6};
 		var num=sdb_sort[document.getElementById('sidebar_active').innerHTML];
+		console.log(sdb_sort);
+		console.log(document.getElementById('sidebar_active').innerHTML);
+		console.log(num);
 		document.getElementById('sidebar').getElementsByTagName('li')[num].className="active";
 		// document.getElementById('sidebar').getElementsByTagName('a')[num].className="bg_blue2";
 	}();

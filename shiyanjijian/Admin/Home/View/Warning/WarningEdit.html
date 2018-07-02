@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+</head>
+<body>
+
+    <include file="Common/header" />
+
+    <span id="sidebar_active" style="display: none;">warning</span>
+    <include file="Common/sidebar"/>
+
+    <div id="content">
+        <form class="form-horizontal" role="form" action="{:U('Warning/WarningEdit',array('id'=>5))}" method="post" enctype="multipart/form-data">
+            <div class="form-group mgb20 pdt20">
+                <label for="name" class="col-sm-2">标题</label>
+                <div>
+                    <input class="form-control" id="username" placeholder="" name="w_title" required="" type="text" value="{$w_Warning.w_title}">
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">来源</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="username" placeholder="" name="w_from" required="" type="text" value="{$w_Warning.w_from}">
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">解读内容</label>
+                <div class="col-sm-10">
+                    <textarea class="Warning" placeholder="" name="w_text" required="">{$w_Warning.w_text}</textarea> 
+                </div>
+            </div>
+            <div class="form-group mgb20">
+                <label for="name" class="col-sm-2">文章缩略图</label>
+                <div class="col-sm-6">
+                <input  placeholder="" class="form-control" name="w_img"  type="file">
+                </div>
+                <!-- <img class="left-img" src="../../../{$w_Warning.w_img}" alt=""> -->
+            </div> 
+            <input type="hidden" name="id" value="{$w_Warning.id}">        
+            <div class="form-group mgb20">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-default bg_blue01 c_white center">确定修改</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.ui.custom.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.uniform.js"></script>
+    <script src="__PUBLIC__/js/select2.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.validate.js"></script>
+    <script src="__PUBLIC__/js/jquery.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.js"></script>
+    <script src="__PUBLIC__/js/unicorn.wizard.js"></script>
+    <script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
+
+</body>
+<style>
+    #content{
+        padding-left: 10%;
+    }
+    .Warning{
+        min-height: 200px;
+    }
+    .center{
+        margin-left: 38%;
+    }
+    .center:hover{
+        margin-left: 38%;
+        background:#285FC1!important;
+        color: #fff;
+    }
+</style>
+</html>

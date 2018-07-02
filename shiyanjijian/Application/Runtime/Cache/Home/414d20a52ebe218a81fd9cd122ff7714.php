@@ -16,8 +16,8 @@
             <div class="clear-text"><p>廉洁石岩</p></div>
         </div>
         <div class="context-1">
-            <div class="title"><p>（四十一）监察机关采取调查措施的程序性规定</p></div>
-            <div class="time"><p>2018-6-22</p></div>
+            <div class="title"><p><?php echo ($deatal_article["title"]); ?></p></div>
+            <div class="time"><p><?php echo (date("Y-m-d",$deatal_article["c_time"])); ?></p></div>
         </div>
         <div class="context-2">
             <div class="swipe">
@@ -28,21 +28,16 @@
             <div class="brief">
                 <img class="book" src="/shiyanjijian/Public/images/ArticleUnscramble/book.png" alt="">
                 <div class="brier-text">
-                    <p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p>
-                    <p><span class="laws">————《中华人民共和国监察法》</span></p> 
-                    <span class="num-laws">第四十一条</span>
+                    <p><?php echo ($deatal_article["outline"]); ?></p>
+                    <p><span class="laws"><?php echo ($deatal_article["title_from"]); ?></span></p> 
+                    <span class="num-laws"><?php echo ($deatal_article["order_by"]); ?></span>
                 </div>
             </div>
         </div>
         <div class="context-4">
             <div class="explain">
                 <ul>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
+                    <li><pre><?php echo ($deatal_article["context_t"]); ?></pre></li>
                 </ul>
             </div>
         </div>
@@ -212,10 +207,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.contain-1-1 .context-4 ul li p{
+.contain-1-1 .context-4 ul li pre{
     color: #333;
     font-size: 16px;
     line-height: 28px;
+    white-space: pre-wrap;
 }
 .contain-1-1 .context-5{
     min-width: 90%;

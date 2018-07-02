@@ -3,23 +3,15 @@ namespace Home\Controller;
 use Think\Controller;
 
 class CleanCultureController extends Controller {
-	public function help() {
+	public function CleanCulture() {
+		$admin_Clean = D('Clean');
+        $this->assign('c_Clean',$admin_Clean->select());
 		$this->display();
 	}
-	public function lawsList(){
-		$scale=I('get.scale');
-		if(!$scale)$scale=1;
-		$db=M('laws');
-		$list=$db->where('scale='.$scale)->field('id,title')->select();
-		$this->assign('scale',$scale);
-		$this->assign('list',$list);
-		$this->display();
-	}
-	public function lawsDetail(){
-		$id=I('get.id');
-		$db=M('laws');
-		$data=$db->where('id='.$id)->select();
-		$this->assign('data',$data[0]);
+
+	public function CleanCultureDetail() {
+		$ci_clean =  M('clean');
+		$this->assign('ct',$ci_clean->find(I('id')));
 		$this->display();
 	}
 }

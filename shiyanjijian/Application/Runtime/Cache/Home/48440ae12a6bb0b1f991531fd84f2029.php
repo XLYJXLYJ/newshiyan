@@ -20,9 +20,9 @@
             <img src="/shiyanjijian/Public/images/WarningExposure/head.png" alt="">
         </div>
         <div class="context-1">
-            <div class="title"><p>监察机关采察序查措机关采察序查机关采察序查机关采察序查施的程序性规定</p></div>
+            <div class="title"><p><?php echo ($w_deatal_article["w_title"]); ?></p></div>
         </div>
-        <div class="time"><p class="left">来源:中国纪检监察报</p><p class="right">发布时间：2018-6-22</p></div>
+        <div class="time"><p class="left">来源:<?php echo ($w_deatal_article["w_from"]); ?></p><p class="right">发布时间：<?php echo (date("Y-m-d",$w_deatal_article["c_time"])); ?></p></div>
         <!-- <div class="context-5">
             <p>来源<span>|</span>中央纪委国家监委网站</p>
             <div class="qr"><img src="/shiyanjijian/Public/images/ArticleUnscramble/qr.png" alt=""></div>
@@ -31,12 +31,7 @@
         <div class="context-4">
             <div class="explain">
                 <ul>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，调查人员进行讯问以及搜查、查封、扣押等重要取证工作，搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
-                    <li><p>调查人员进行讯问以及搜查、查封、扣押等重要取证工作，应当对全过程进行录音录像，留存备查。</p></li>
+                    <li><pre><?php echo ($w_deatal_article["w_text"]); ?></pre></li>
                 </ul>
             </div>
         </div>
@@ -147,6 +142,7 @@
     top: 10px;
     vertical-align: middle;
 }
+
 .contain-2-1 .context-4{
     min-width: 90%;
     height:auto;
@@ -157,11 +153,11 @@
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.contain-2-1 .context-4 ul li p{
+.contain-2-1 .context-4 ul li pre{
     color: #333;
     font-size: 16px;
     line-height: 28px;
-    text-indent: 2em;
+    white-space: pre-wrap;
 }
 </style>
 </html>

@@ -46,7 +46,7 @@
         </ul>
     </div> -->
 
-    <span id="sidebar_active" style="display: none;">index</span>
+    <span id="sidebar_active" style="display: none;">article</span>
     <!-- <div id="sidebar">
 	<ul style="border:0;margin: 0">
 		<li style="border:none">
@@ -111,15 +111,18 @@
 </div>
 <script type="text/javascript">
 	!function(){
-		var sdb_sort={'index':0,'report':1};
+		var sdb_sort={'index':0,'report':1,'article':2,'study':3,'warning':4,'video':5,'clean':6};
 		var num=sdb_sort[document.getElementById('sidebar_active').innerHTML];
+		console.log(sdb_sort);
+		console.log(document.getElementById('sidebar_active').innerHTML);
+		console.log(num);
 		document.getElementById('sidebar').getElementsByTagName('li')[num].className="active";
 		// document.getElementById('sidebar').getElementsByTagName('a')[num].className="bg_blue2";
 	}();
 </script>
 
     <div id="content">
-        <div><button class="btn btn-default bg_blue01 c_white center mg10">添加</button></div>
+        <div><a href="./ArticleAdd.html"><button class="btn btn-default bg_blue01 c_white center mg10">添加</button></a></div>
         <table class="table tc">
             <tr>
                 <th>ID</th>
@@ -128,20 +131,13 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr>
-                <td>123</td>
-                <td>我我是好人我是好人我是好人我是好人我是好人我是好人我是好人我是好人我是好人是好人</td>
-                <td>2016-11-03</td>
-                <td><button class="btn btn-default btn-warning">编辑</button></td>
-                <td><button class="btn btn-default btn-danger">删除</button></td>
-            </tr>
-            <tr>
-                <td>123</td>
-                <td>我是好人</td>
-                <td>2016-11-03</td>
-                <td><button class="btn btn-default btn-warning">编辑</button></td>
-                <td><button class="btn btn-default btn-danger">删除</button></td>
-            </tr>
+            <?php if(is_array($a_article)): foreach($a_article as $key=>$admin_art): ?><tr>
+                <td><?php echo ($admin_art["id"]); ?></td>
+                <td><?php echo ($admin_art["title"]); ?></td>
+                <td><?php echo ($admin_art["c_time"]); ?></td>
+                <td><a href="<?php echo U('Article/ArticleEdit',array('id'=>$admin_art['id']));?>"><button class="btn btn-default btn-warning">编辑</button></a></td>
+                <td><a href="<?php echo U('Article/ArticleDelete',array('id'=>$admin_art['id']));?>"><button class="btn btn-default btn-danger">删除</button></a></td>
+            </tr><?php endforeach; endif; ?>
         </table>
     </div>
     <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>

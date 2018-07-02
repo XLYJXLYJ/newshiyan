@@ -46,7 +46,7 @@
         </ul>
     </div> -->
 
-    <span id="sidebar_active" style="display: none;">index</span>
+    <span id="sidebar_active" style="display: none;">article</span>
     <!-- <div id="sidebar">
 	<ul style="border:0;margin: 0">
 		<li style="border:none">
@@ -111,54 +111,58 @@
 </div>
 <script type="text/javascript">
 	!function(){
-		var sdb_sort={'index':0,'report':1};
+		var sdb_sort={'index':0,'report':1,'article':2,'study':3,'warning':4,'video':5,'clean':6};
 		var num=sdb_sort[document.getElementById('sidebar_active').innerHTML];
+		console.log(sdb_sort);
+		console.log(document.getElementById('sidebar_active').innerHTML);
+		console.log(num);
 		document.getElementById('sidebar').getElementsByTagName('li')[num].className="active";
 		// document.getElementById('sidebar').getElementsByTagName('a')[num].className="bg_blue2";
 	}();
 </script>
 
     <div id="content">
-        <form class="form-horizontal" role="form" action="<?php echo U('Article/ArticleUnscramble');?>" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" role="form" action="<?php echo U('Article/ArticleEdit');?>" method="post" enctype="multipart/form-data">
             <div class="form-group mgb20 pdt20">
                 <label for="name" class="col-sm-2">解读标题</label>
                 <div>
-                    <input class="form-control" id="username" placeholder="" name="title" required="" type="text">
+                    <input class="form-control" id="username" placeholder="" name="title" required="" type="text" value="<?php echo ($edit_article["title"]); ?>">
                 </div>
             </div>
             <div class="form-group mgb20">
                 <label for="name" class="col-sm-2">解读纲要</label>
                 <div class="col-sm-6">
-                    <textarea class="form-control" id="username" placeholder="" name="outline" required="" type="text"></textarea> 
+                    <textarea class="form-control" id="username" placeholder="" name="outline" required="" type="text"><?php echo ($edit_article["outline"]); ?></textarea> 
                 </div>
             </div>
             <div class="form-group mgb20">
                 <label for="name" class="col-sm-2">解读来源</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="username" placeholder="" name="title_from" required="" type="text">
+                    <input class="form-control" id="username" placeholder="" name="title_from" required="" type="text" value="<?php echo ($edit_article["title_from"]); ?>">
                 </div>
             </div>
             <div class="form-group mgb20 ">
                 <label for="name" class="col-sm-2">第几条</label>
                 <div class="col-sm-6">
-                    <input class="form-control" id="username" placeholder="" name="order_by" required="" type="text">
+                    <input class="form-control" id="username" placeholder="" name="order_by" required="" type="text" value="<?php echo ($edit_article["order_by"]); ?>">
                 </div>
             </div>
             <div class="form-group mgb20">
                 <label for="name" class="col-sm-2">解读内容</label>
                 <div class="col-sm-10">
-                    <textarea class="article" placeholder="" name="context_t" required=""></textarea> 
+                    <textarea class="article" placeholder="" name="context_t" required=""><?php echo ($edit_article["context_t"]); ?></textarea> 
                 </div>
             </div>
             <div class="form-group mgb20">
                 <label for="name" class="col-sm-2">文章缩略图</label>
                 <div class="col-sm-6">
-                <input  placeholder="" class="form-control" name="pic"  type="file">
+                <input  placeholder="" class="form-control" name="title_img"  type="file">
                 </div>
-            </div>           
+            </div>
+            <input type="text" name="id" value="<?php echo ($edit_article["id"]); ?>">           
             <div class="form-group mgb20">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-default bg_blue01 c_white center">保存信息</button>
+                    <button type="submit" class="btn btn-default bg_blue01 c_white center">确定修改</button>
                 </div>
             </div>
         </form>

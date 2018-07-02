@@ -15,11 +15,11 @@
             <h2 class="lib-title"><img src="/shiyanjijian/Public/images/ArticleUnscramble/edit.png" alt=""> 条文解读</h2>
             <div class="lib-context">
                 <?php if(is_array($g_article)): foreach($g_article as $key=>$a_art): ?><ul>
-                    <a href="./ArticleUnscrambleDetail.html">
+                    <a href="./ArticleUnscrambleDetail.html?id=<?php echo ($a_art["id"]); ?>">
                         <li>
-                            <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
+                            <img class="left-img" src="../../../<?php echo ($a_art["img_path"]); ?>" alt="">
                             <h3 class="context-title"><?php echo ($a_art["title"]); ?></h3>
-                            <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
+                            <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt=""><?php echo (date("Y-m-d",$a_art["c_time"])); ?></p>
                         </li>
                     </a>
                 </ul><?php endforeach; endif; ?>

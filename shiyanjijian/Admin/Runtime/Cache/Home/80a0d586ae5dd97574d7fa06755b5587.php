@@ -46,7 +46,7 @@
         </ul>
     </div> -->
 
-    <span id="sidebar_active" style="display: none;">index</span>
+    <span id="sidebar_active" style="display: none;">warning</span>
     <!-- <div id="sidebar">
 	<ul style="border:0;margin: 0">
 		<li style="border:none">
@@ -111,15 +111,34 @@
 </div>
 <script type="text/javascript">
 	!function(){
-		var sdb_sort={'index':0,'report':1};
+		var sdb_sort={'index':0,'report':1,'article':2,'study':3,'warning':4,'video':5,'clean':6};
 		var num=sdb_sort[document.getElementById('sidebar_active').innerHTML];
+		console.log(sdb_sort);
+		console.log(document.getElementById('sidebar_active').innerHTML);
+		console.log(num);
 		document.getElementById('sidebar').getElementsByTagName('li')[num].className="active";
 		// document.getElementById('sidebar').getElementsByTagName('a')[num].className="bg_blue2";
 	}();
 </script>
 
     <div id="content">
-       <p>警示曝光</p>
+        <div><a href="./WarningAdd.html"><button class="btn btn-default bg_blue01 c_white center mg10">添加</button></a></div>
+        <table class="table tc">
+            <tr>
+                <th>ID</th>
+                <th>廉洁文化标题</th>
+                <th>添加时间</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <?php if(is_array($w_Warning)): foreach($w_Warning as $key=>$w_art): ?><tr>
+                <td><?php echo ($w_art["id"]); ?></td>
+                <td><?php echo ($w_art["w_title"]); ?></td>
+                <td><?php echo (date("Y-m-d",$w_art["w_time"])); ?></td>
+                <td><a href="<?php echo U('Warning/WarningEdit',array('id'=>$w_art['id']));?>"><button class="btn btn-default btn-warning">编辑</button></a></td>
+                <td><a href="<?php echo U('Warning/WarningDelete',array('id'=>$w_art['id']));?>"><button class="btn btn-default btn-danger">删除</button></a></td>
+            </tr><?php endforeach; endif; ?>
+        </table>
     </div>
     <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
     <script src="/shiyanjijian/Admin/Home/View/Public/js/jquery.min.js"></script>
@@ -134,4 +153,13 @@
     <script src="/shiyanjijian/Admin/Home/View/Public/js/unicorn.form_validation.js"></script>
 
 </body>
+<style>
+    #content{
+        padding: 40px;
+    }
+    .center:hover{
+        background:#285FC1!important;
+        color: #fff;
+    }
+</style>
 </html>

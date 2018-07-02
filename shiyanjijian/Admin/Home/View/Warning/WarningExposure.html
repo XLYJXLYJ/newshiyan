@@ -7,11 +7,29 @@
 
     <include file="Common/header" />
 
-    <span id="sidebar_active" style="display: none;">index</span>
+    <span id="sidebar_active" style="display: none;">warning</span>
     <include file="Common/sidebar"/>
 
     <div id="content">
-       <p>警示曝光</p>
+        <div><a href="./WarningAdd.html"><button class="btn btn-default bg_blue01 c_white center mg10">添加</button></a></div>
+        <table class="table tc">
+            <tr>
+                <th>ID</th>
+                <th>廉洁文化标题</th>
+                <th>添加时间</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <foreach name='w_Warning' item='w_art'> 
+            <tr>
+                <td>{$w_art.id}</td>
+                <td>{$w_art.w_title}</td>
+                <td>{$w_art.w_time|date="Y-m-d",###}</td>
+                <td><a href="{:U('Warning/WarningEdit',array('id'=>$w_art['id']))}"><button class="btn btn-default btn-warning">编辑</button></a></td>
+                <td><a href="{:U('Warning/WarningDelete',array('id'=>$w_art['id']))}"><button class="btn btn-default btn-danger">删除</button></a></td>
+            </tr>
+            </foreach>
+        </table>
     </div>
     <div class="c9 lh50 tc">Copyright © 深圳市宝安区石岩街道纪工委. All Rights Reserved 未经同意 请勿转载</div>
     <script src="__PUBLIC__/js/jquery.min.js"></script>
@@ -26,4 +44,13 @@
     <script src="__PUBLIC__/js/unicorn.form_validation.js"></script>
 
 </body>
+<style>
+    #content{
+        padding: 40px;
+    }
+    .center:hover{
+        background:#285FC1!important;
+        color: #fff;
+    }
+</style>
 </html>

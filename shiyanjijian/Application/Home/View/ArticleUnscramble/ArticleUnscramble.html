@@ -17,11 +17,11 @@
                 <foreach name='g_article' item='a_art'>   
                       
                 <ul>
-                    <a href="./ArticleUnscrambleDetail.html">
+                    <a href="./ArticleUnscrambleDetail.html?id={$a_art.id}">
                         <li>
-                            <img class="left-img" src="__PUBLIC__/images/ArticleUnscramble/1.png" alt="">
+                            <img class="left-img" src="../../../{$a_art.img_path}" alt="">
                             <h3 class="context-title">{$a_art.title}</h3>
-                            <p class="time-text"><img class="time" src="__PUBLIC__/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
+                            <p class="time-text"><img class="time" src="__PUBLIC__/images/ArticleUnscramble/time.png" alt="">{$a_art.c_time|date="Y-m-d",###}</p>
                         </li>
                     </a>
                 </ul>

@@ -14,45 +14,15 @@
         <div class="article">
             <h2 class="lib-title">警示曝光</h2>
             <div class="lib-context">
-                <ul>
-                    <a href="./WarningExposureDetail.html">
+            <?php if(is_array($w_article)): foreach($w_article as $key=>$w_art): ?><ul>
+                    <a href="./WarningExposureDetail.html?id=<?php echo ($w_art["id"]); ?>">
                         <li>
-                            <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                            <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                            <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
+                            <!-- <img class="left-img" src="../../../<?php echo ($w_art["w_img"]); ?>" alt=""> -->
+                            <h3 class="context-title"><?php echo ($w_art["w_title"]); ?></h3>
+                            <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt=""><?php echo (date("Y-m-d",$w_art["w_time"])); ?></p>
                         </li>
                     </a>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                    <li>
-                        <img class="left-img" src="/shiyanjijian/Public/images/ArticleUnscramble/1.png" alt="">
-                        <h3 class="context-title">(四十一)监察机关采取调查措施的程序性规定</h3>
-                        <p class="time-text"><img class="time" src="/shiyanjijian/Public/images/ArticleUnscramble/time.png" alt="">2018-06-11</p>
-                    </li>
-                </ul>
+                </ul><?php endforeach; endif; ?>
             </div>
             <div class="download-more">
                 <p>点击加载更多<img src="/shiyanjijian/Public/images/ArticleUnscramble/download.png" alt=""></p>
@@ -83,10 +53,10 @@
     margin-bottom: 10px;
     border-bottom: 1px solid #f2f3f5;
 }
-.contain-2 .lib-context ul li .left-img{
+/* .contain-2 .lib-context ul li .left-img{
     width: 120px;
     height: 92px;
-}
+} */
 .contain-2 .head-img{
     min-width: 100%;
 }
@@ -109,7 +79,8 @@
     height: 48px;
     position: absolute;
     top: 0px;
-    left: 140px;
+    /* left: 140px; */
+    left: 10px;
     overflow: hidden;
     font-size: 14px;
 }
