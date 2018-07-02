@@ -32,6 +32,55 @@
                             <else />
                             <a href="{:U('Report/reportList',array('scale'=>5))}" class="btn btn-info">部门得分</a>
                         </if>
+                        <a class="btn btn-info add-subject">添加题目</a>
+                        <div class="alert_demo tc add-alert" style="overflow-y: scroll;max-height: 300px;">
+                            <select name="" id="">
+                                <option value="1">单选题</option>
+                                <option value="2">多选题</option>
+                                <option value="3">判断题</option>
+                            </select>
+                            <div>
+                                <textarea name="" id="" cols="30" rows="10" style="width: 200px;height: 30px;"></textarea>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="A">A
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="B">B
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="C">C
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="D">D
+                                </label>
+                            </div>
+                            <div>
+                                <textarea name="" id="" cols="30" rows="10" style="width: 200px;height: 30px;"></textarea>
+                                <label for="" style="display: inline-block;">
+                                    <input type="checkbox" name="answer" id="" value="A">A
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="checkbox" name="answer" id="" value="B">B
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="checkbox" name="answer" id="" value="C">C
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="checkbox" name="answer" id="" value="D">D
+                                </label>
+                            </div>
+                            <div>
+                                <textarea name="" id="" cols="30" rows="10" style="width: 200px;height: 30px;"></textarea>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="正确">正确
+                                </label>
+                                <label for="" style="display: inline-block;">
+                                    <input type="radio" name="answer" id="" value="错误">错误
+                                </label>
+                            </div>
+                            <div class="btn btn-info quit-add">取消</div>
+                            <div class="btn btn-danger sure-add">确定</div>
+                        </div>
                     </div>
                     <div class="widget-box">
                         <div class="widget-title">
@@ -44,7 +93,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>全选</th>
+                                        <th style="width: 60px">全选</th>
                                         <th>题目名</th>
                                         <th>选项</th>
                                         <th>答案</th>
@@ -54,7 +103,9 @@
                                 <tbody>
                                     <volist name="data" id="vo">
                                         <tr>
-                                            <td>1</td>
+                                            <td>
+                                                <input type="checkbox" name="" id="">
+                                            </td>
                                             <td>aaaaaaaaa</td>
                                             <td>abcd</td>
                                             <td>A</td>
@@ -159,9 +210,8 @@
             } else {
                 alert('题库名不可为空')
             }
-
         }
-        $('.add-que').click(function() {
+        $('.add-subject').click(function() {
             showaddAlt()
         });
         $('.quit-add').click(function() {
